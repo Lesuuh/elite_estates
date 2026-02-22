@@ -14,7 +14,7 @@ const Hero = () => {
         
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h3 className="uppercase text-xs md:text-sm text-accent tracking-[0.3em] font-medium mb-3 drop-shadow-md">
+          <h3 className="uppercase text-xs md:text-sm text-accent  tracking-[0.3em] font-bold mb-3 drop-shadow-md">
             Exclusivity Redefined
           </h3>
           <h2 className="text-5xl md:text-7xl text-white font-extrabold tracking-tight leading-tight">
