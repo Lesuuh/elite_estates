@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* =========================
+   DESIGN TOKENS (Theme)
+========================= */
+
+@theme {
+  /* Colors */
+  --color-primary: #0b1c2d;
+  --color-primary-dark: #081522;
+  --color-accent: #c6a55c;
+  --color-accent-hover: #b89645;
+
+  --color-light: #f4f6f8;
+  --color-muted: #d9dde2;
+  --color-dark: #333333;
+
+  /* Fonts */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Radius */
+  --radius-md: 12px;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
