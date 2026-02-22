@@ -38,12 +38,12 @@ const About = () => {
     },
   ];
   return (
-    <section className="bg-primary py-24 px-6 text-center relative overflow-hidden">
+    <section className="bg-primary  py-24 px-6 text-center relative overflow-hidden">
       {/* Background Icon */}
       <BadgeCheck className="absolute top-[-100px] right-0 w-100 h-100 text-gray-700 opacity-50 z-0" />
 
       {/* Content Wrapper */}
-      <div className="relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
         <p className="text-accent uppercase tracking-[0.3em] font-medium text-xs md:text-sm">
           The signature difference
         </p>
