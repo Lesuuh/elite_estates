@@ -1,4 +1,4 @@
-export type PropertyCategory = "villa" | "penthouse" | "mansion";
+export type PropertyCategory = "villa" | "penthouse" | "mansion" | "apartment";
 
 export interface PropertyFeatures {
   bedrooms: number;

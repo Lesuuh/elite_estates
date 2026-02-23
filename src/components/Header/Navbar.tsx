@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, User, Search, Plus } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const user = true;
@@ -38,12 +39,18 @@ const Navbar = () => {
           {/* Desktop Menu - Minimalist Style */}
           <ul className="hidden md:flex items-center space-x-8 text-[13px] font-medium uppercase tracking-[0.15em] text-white/90">
             {["Buy", "Rent", "Sell", "Concierge"].map((item) => (
-              <li key={item} className="relative group cursor-pointer">
-                <span className="group-hover:text-accent transition-colors duration-300">
-                  {item}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full"></span>
-              </li>
+              <Link
+                key={item}
+                to={`/listings`}
+                className="hover:text-accent transition-colors"
+              >
+                <li key={item} className="relative group cursor-pointer">
+                  <span className="group-hover:text-accent transition-colors duration-300">
+                    {item}
+                  </span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </Link>
             ))}
           </ul>
 

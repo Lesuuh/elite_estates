@@ -6,7 +6,7 @@ import {
   Headset,
 } from "lucide-react";
 
-const About = () => {
+const HeroAbout = () => {
   const aboutContent = [
     {
       id: 1,
@@ -77,4 +77,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default HeroAbout;
