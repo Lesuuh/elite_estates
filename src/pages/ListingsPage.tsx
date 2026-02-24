@@ -49,7 +49,6 @@ const ListingsPage = () => {
     });
   };
 
-  console.log(filters);
   const priceOptions = [
     { label: "Under ₦5M", min: 0, max: 5000000 },
     { label: "₦5M – ₦20M", min: 5000000, max: 20000000 },
