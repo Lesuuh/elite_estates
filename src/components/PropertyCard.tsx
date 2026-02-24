@@ -16,11 +16,12 @@ const PropertyCard = ({ property, view = "list" }: PropertyCardProps) => {
         className="flex flex-col md:flex-row gap-6 bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-lg transition-all"
       >
         {/* Image */}
-        <div className="w-full md:w-60 h-40 md:h-auto shrink-0 overflow-hidden">
+        <div className="relative w-full md:w-64 h-40 md:h-auto overflow-hidden ">
           <img
             src={property.image}
             alt={property.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -81,10 +82,13 @@ const PropertyCard = ({ property, view = "list" }: PropertyCardProps) => {
     <Link to={`/properties/${property.id}`} className="block">
       <div className="group relative bg-white border border-gray-100 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-2">
         {/* Image Container */}
-        <div className="relative  overflow-hidden">
+        <div className="relative aspect-4/3  overflow-hidden">
           <img
             src={property.image}
             alt={property.title}
+            loading="lazy"
+            width={800}
+            height={600}
             className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
 

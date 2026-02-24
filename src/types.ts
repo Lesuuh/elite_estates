@@ -13,6 +13,7 @@ export interface Property {
   price: string;
   location: string;
   image: string;
+  images: string[];
   featured: boolean;
   features: PropertyFeatures;
 }
