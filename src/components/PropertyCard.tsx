@@ -2,7 +2,81 @@ import { Heart, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { Property } from "../types";
 
-const PropertyCard = ({ property }: { property: Property }) => {
+type PropertyCardProps = {
+  property: Property;
+  view?: "grid" | "list";
+};
+
+const PropertyCard = ({ property, view = "list" }: PropertyCardProps) => {
+  if (view === "list") {
+    // LIST VIEW
+    return (
+      <Link
+        to={`/properties/${property.id}`}
+        className="flex flex-col md:flex-row gap-6 bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-lg transition-all"
+      >
+        {/* Image */}
+        <div className="w-full md:w-60 h-40 md:h-auto shrink-0 overflow-hidden">
+          <img
+            src={property.image}
+            alt={property.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 p-6 flex flex-col justify-between">
+          <div>
+            <div className="flex justify-between items-start mb-2">
+              <h2 className="font-serif text-xl text-primary tracking-tight">
+                ₦{property.price}
+              </h2>
+              {property.featured && (
+                <span className="bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-bold uppercase">
+                  Signature
+                </span>
+              )}
+            </div>
+
+            <h3 className="text-lg font-medium text-gray-900">
+              {property.title}
+            </h3>
+
+            <div className="flex items-center gap-2 text-gray-400 mt-2">
+              <MapPin size={14} className="text-accent" />
+              <span className="text-sm">{property.location}</span>
+            </div>
+
+            {/* Features */}
+            <div className="flex gap-6 mt-4">
+              <div className="flex flex-col items-center">
+                <span className="text-primary font-bold">
+                  {property.features.bedrooms}
+                </span>
+                <span className="text-xs text-gray-400 uppercase">Beds</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-primary font-bold">
+                  {property.features.bathrooms}
+                </span>
+                <span className="text-xs text-gray-400 uppercase">Baths</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-primary font-bold">
+                  {property.features.area}
+                </span>
+                <span className="text-xs text-gray-400 uppercase">Sq Ft</span>
+              </div>
+            </div>
+          </div>
+
+          <button className="mt-4 self-start px-4 py-2 bg-primary text-white rounded-full text-xs font-bold hover:bg-accent transition-all">
+            View Details
+          </button>
+        </div>
+      </Link>
+    );
+  }
   return (
     <Link to={`/properties/${property.id}`} className="block">
       <div className="group relative bg-white border border-gray-100 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-2">
@@ -40,7 +114,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
         <div className="p-7">
           <div className="flex justify-between items-start mb-2">
             <h2 className="font-serif text-3xl text-primary tracking-tight">
-              {property.price}
+              ₦{property.price}
             </h2>
             <div className="flex items-center gap-1 text-accent">
               <span className="text-[10px] font-bold uppercase tracking-tighter">
