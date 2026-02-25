@@ -184,14 +184,7 @@
 
 // export default DevelopmentsPage;
 
-import {
-  Calendar,
-  TrendingUp,
-  ShieldCheck,
-  MapPin,
-  ArrowRight,
-  Layers,
-} from "lucide-react";
+import { Calendar, ShieldCheck, MapPin, ArrowRight } from "lucide-react";
 
 const DevelopmentsPage = () => {
   const projects = [
@@ -204,7 +197,7 @@ const DevelopmentsPage = () => {
       progress: 65,
       appreciation: "+22%",
       image:
-        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
+        "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
       description:
         "A 30-story vertical masterpiece featuring smart-glass technology and private sky-pools. Positioned to redefine the Lagos skyline.",
     },
@@ -277,134 +270,110 @@ const DevelopmentsPage = () => {
 
   return (
     <div className="bg-white min-h-screen pt-28">
-      {/* Editorial Header */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-3 mb-6">
+      {/* Condensed Header */}
+      <section className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-3 mb-4">
             <span className="w-12 h-[1px] bg-accent"></span>
             <p className="uppercase text-[10px] tracking-[0.4em] text-accent font-bold">
-              The Future Skyine
+              Portfolio
             </p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-serif text-primary leading-tight mb-8">
-            Upcoming <span className="italic font-light">Landmarks</span>
+          <h1 className="text-5xl md:text-6xl font-serif text-primary leading-tight">
+            Upcoming{" "}
+            <span className="italic font-light text-gray-400">Landmarks</span>
           </h1>
-          <p className="text-gray-500 text-lg font-light leading-relaxed border-l-2 border-gray-100 pl-8">
-            Direct access to off-plan opportunities with the highest capital
-            appreciation potential in the region.
-          </p>
         </div>
+        <p className="text-gray-400 text-sm font-light max-w-xs border-l border-gray-100 pl-6 hidden md:block">
+          Direct access to off-plan opportunities with high capital appreciation
+          potential.
+        </p>
       </section>
 
-      {/* Development Projects List */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="space-y-32">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`flex flex-col lg:flex-row gap-16 items-center ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
-            >
-              {/* Image Side with Floating Progress */}
-              <div className="lg:w-1/2 relative group">
-                <div className="overflow-hidden rounded-[40px] shadow-2xl bg-gray-100">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-1000"
-                  />
+      {/* Optimized High-Density Grid */}
+      <section className="max-w-7xl mx-auto px-6 pb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          {projects.map((project) => (
+            <div key={project.id} className="group flex flex-col">
+              {/* Image Container with Progress Overlay */}
+              <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden mb-8 shadow-sm">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+
+                {/* Progress Badge */}
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                    {project.status}
+                  </span>
                 </div>
 
-                {/* Floating Progress UI */}
-                <div className="absolute -bottom-10 -right-6 lg:right-10 bg-primary-dark p-8 rounded-3xl shadow-2xl border border-white/10 hidden md:block z-10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Layers size={16} className="text-accent" />
-                    <p className="text-white/60 text-[10px] uppercase tracking-widest font-bold">
-                      Build Progress
-                    </p>
-                  </div>
-                  <div className="flex items-end gap-6">
-                    <span className="text-white text-6xl font-serif italic leading-none">
-                      {project.progress}%
-                    </span>
-                    <div className="flex flex-col gap-2">
-                      <div className="w-32 h-1.5 bg-white/10 rounded-full relative overflow-hidden">
-                        <div
-                          className="absolute top-0 left-0 h-full bg-accent transition-all duration-1000"
-                          style={{ width: `${project.progress}%` }}
-                        ></div>
-                      </div>
-                      <p className="text-accent text-[10px] font-bold uppercase tracking-tighter">
-                        {project.status}
-                      </p>
-                    </div>
-                  </div>
+                {/* Hover Overlay: Description */}
+                <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center p-10 text-center">
+                  <p className="text-white font-light italic text-lg leading-relaxed mb-8">
+                    "{project.description}"
+                  </p>
+                  <button className="text-accent uppercase text-[10px] tracking-[0.3em] font-bold flex items-center justify-center gap-2 hover:gap-4 transition-all">
+                    View Prospectus <ArrowRight size={14} />
+                  </button>
                 </div>
               </div>
 
-              {/* Data & Content Side */}
-              <div className="lg:w-1/2 space-y-10">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 text-accent">
-                    <ShieldCheck size={18} />
-                    <span className="uppercase text-[10px] font-bold tracking-[0.3em]">
-                      Verified Asset
-                    </span>
+              {/* Data Content */}
+              <div className="flex-1 px-2">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h2 className="text-2xl font-serif text-primary group-hover:text-accent transition-colors duration-300">
+                      {project.name}
+                    </h2>
+                    <div className="flex items-center gap-1 text-gray-400 mt-1">
+                      <MapPin size={12} />
+                      <span className="text-xs font-light tracking-wide">
+                        {project.location}
+                      </span>
+                    </div>
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">
-                    {project.name}
-                  </h2>
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <MapPin size={16} strokeWidth={1.5} />
-                    <span className="font-light tracking-wide">
-                      {project.location}
-                    </span>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 leading-relaxed font-light text-xl italic">
-                  "{project.description}"
-                </p>
-
-                {/* Investment Stats Grid */}
-                <div className="grid grid-cols-2 gap-6 pt-6">
-                  <div className="p-6 bg-gray-50 rounded-3xl border border-gray-100 group-hover:border-accent transition-colors">
-                    <Calendar
-                      className="text-accent mb-4"
-                      size={24}
-                      strokeWidth={1.5}
-                    />
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-1">
-                      Handover Date
+                  <div className="text-right">
+                    <p className="text-[10px] uppercase tracking-tighter text-gray-400 font-bold">
+                      ROI
                     </p>
-                    <p className="text-primary font-bold text-xl">
-                      {project.completion}
-                    </p>
-                  </div>
-                  <div className="p-6 bg-gray-50 rounded-3xl border border-gray-100">
-                    <TrendingUp
-                      className="text-accent mb-4"
-                      size={24}
-                      strokeWidth={1.5}
-                    />
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-1">
-                      Target ROI
-                    </p>
-                    <p className="text-primary font-bold text-xl">
+                    <p className="text-primary font-serif italic text-lg">
                       {project.appreciation}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-8">
-                  <button className="flex items-center justify-between w-full md:w-auto md:min-w-[280px] bg-primary text-white px-8 py-6 rounded-full hover:bg-accent transition-all duration-500 group shadow-xl">
-                    <span className="uppercase text-[11px] font-bold tracking-[0.3em]">
-                      Request Prospectus
-                    </span>
-                    <ArrowRight
-                      size={20}
-                      className="group-hover:translate-x-2 transition-transform"
+                {/* Progress Line */}
+                <div className="space-y-2 mt-6">
+                  <div className="flex justify-between text-[9px] uppercase tracking-widest font-bold text-gray-400">
+                    <span>Construction Progress</span>
+                    <span className="text-primary">{project.progress}%</span>
+                  </div>
+                  <div className="w-full h-[2px] bg-gray-100 relative overflow-hidden">
+                    <div
+                      className="absolute top-0 left-0 h-full bg-primary transition-all duration-1000 delay-300 group-hover:bg-accent"
+                      style={{ width: `${project.progress}%` }}
                     />
-                  </button>
+                  </div>
+                </div>
+
+                {/* Micro Stats */}
+                <div className="flex items-center gap-6 mt-6 pt-6 border-t border-gray-50">
+                  <div className="flex items-center gap-2">
+                    <Calendar size={14} className="text-gray-300" />
+                    <span className="text-[10px] uppercase tracking-widest text-gray-500">
+                      {project.completion}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck size={14} className="text-gray-300" />
+                    <span className="text-[10px] uppercase tracking-widest text-gray-500">
+                      Insured
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -412,47 +381,29 @@ const DevelopmentsPage = () => {
         </div>
       </section>
 
-      {/* Why Invest Section */}
-      <section className="bg-primary-dark mt-20 py-32 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-16">
-          <div className="lg:w-1/2">
-            <h3 className="text-accent text-xs uppercase tracking-[0.5em] font-bold mb-8">
-              Strategic Growth
-            </h3>
-            <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
-              The Power of <br />
-              Off-Plan Acquisition
-            </h2>
-          </div>
-          <div className="lg:w-1/2 grid gap-12">
-            {[
-              {
-                title: "Price Advantage",
-                desc: "Acquire high-value land and structures at initial groundbreaking rates before market escalation.",
-              },
-              {
-                title: "Bespoke Finishes",
-                desc: "Select and customize interior palettes, flooring, and smart-home integrations during construction.",
-              },
-              {
-                title: "Staged Payments",
-                desc: "Structured payment plans aligned with construction milestones for better capital management.",
-              },
-            ].map((benefit, i) => (
-              <div key={i} className="flex gap-8 group">
-                <span className="text-accent font-serif text-3xl italic opacity-40 group-hover:opacity-100 transition-opacity">
-                  0{i + 1}
-                </span>
-                <div>
-                  <h4 className="text-white font-bold text-lg mb-2">
-                    {benefit.title}
-                  </h4>
-                  <p className="text-gray-400 font-light leading-relaxed">
-                    {benefit.desc}
+      {/* Mini Why Invest (Condensed) */}
+      <section className="bg-primary py-24 px-6 ">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center text-center md:text-left">
+          <h2 className="text-3xl font-serif text-white md:w-1/3 italic">
+            The Off-Plan <br /> Advantage.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:w-2/3">
+            {["Price Entry", "Bespoke Customization", "Payment Milestones"].map(
+              (item) => (
+                <div
+                  key={item}
+                  className="p-6 border border-white/10 rounded-2xl"
+                >
+                  <p className="text-accent font-bold uppercase tracking-widest text-[9px] mb-2">
+                    {item}
+                  </p>
+                  <p className="text-white/60 text-xs leading-relaxed">
+                    Securing assets before completion ensures maximum capital
+                    growth.
                   </p>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </div>
       </section>

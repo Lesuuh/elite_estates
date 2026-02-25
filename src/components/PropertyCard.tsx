@@ -7,7 +7,7 @@ type PropertyCardProps = {
   view?: "grid" | "list";
 };
 
-const PropertyCard = ({ property, view = "list" }: PropertyCardProps) => {
+const PropertyCard = ({ property, view = "grid" }: PropertyCardProps) => {
   if (view === "list") {
     // LIST VIEW
     return (

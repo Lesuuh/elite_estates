@@ -7,19 +7,22 @@ import {
   MapPin,
   ArrowUp,
 } from "lucide-react";
-import ConsultationForm from "../ConsultationForm";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import ConsultationForm from "../ConsultationForm";
+// import { useState } from "react";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
-  const openConsultationModal = () => {
-    setOpenModal(true);
-  };
+  // const openConsultationModal = () => {
+  //   setOpenModal(true);
+  // };
+
+  const navigate = useNavigate();
 
   return (
     <footer className="bg-primary-dark text-white pt-24 pb-12 px-6 relative overflow-hidden">
@@ -42,7 +45,7 @@ const Footer = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <button
-              onClick={openConsultationModal}
+              onClick={() => navigate("contact")}
               className="bg-accent text-primary px-10 py-5 rounded-full uppercase text-xs font-bold tracking-[0.2em] hover:bg-white transition-all shadow-xl"
             >
               Book a Consultation
@@ -173,7 +176,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      {openModal && <ConsultationForm setOpenModal={setOpenModal} />}
+      {/* {openModal && <ConsultationForm setOpenModal={setOpenModal} />} */}
     </footer>
   );
 };

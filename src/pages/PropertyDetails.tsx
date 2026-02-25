@@ -1,6 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import properties from "../data";
-import { ChevronRight, Maximize2, MapPin, Share2, Heart, X } from "lucide-react";
+import {
+  ChevronRight,
+  Maximize2,
+  MapPin,
+  // Share2,
+  // Heart,
+  X,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 const PropertyDetails = () => {
@@ -56,14 +63,14 @@ const PropertyDetails = () => {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        {/* <div className="flex gap-4">
           <button className="p-4 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors">
             <Share2 size={18} />
           </button>
           <button className="p-4 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors">
             <Heart size={18} />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Luxury Image Gallery Grid */}
@@ -191,16 +198,23 @@ interface MorePhotosModalProps {
   optimize: (url: string, width: number) => string;
 }
 
-const MorePhotosModal = ({ images, title, onClose, optimize }: MorePhotosModalProps) => {
+const MorePhotosModal = ({
+  images,
+  title,
+  onClose,
+  optimize,
+}: MorePhotosModalProps) => {
   return (
     <div className="fixed inset-0 z-[100] flex flex-col bg-primary-dark/98 backdrop-blur-xl animate-in fade-in duration-300">
       {/* Modal Header */}
       <div className="flex items-center justify-between p-6 md:px-12 border-b border-white/5 bg-primary-dark/50 backdrop-blur-md sticky top-0 z-10">
         <div>
           <h2 className="text-white font-serif text-xl md:text-2xl">{title}</h2>
-          <p className="text-white/40 text-[10px] uppercase tracking-widest mt-1">Full Property Gallery — {images.length} Images</p>
+          <p className="text-white/40 text-[10px] uppercase tracking-widest mt-1">
+            Full Property Gallery — {images.length} Images
+          </p>
         </div>
-        <button 
+        <button
           onClick={onClose}
           className="bg-white/5 hover:bg-accent hover:text-primary p-3 rounded-full text-white transition-all duration-300 group"
         >
@@ -213,7 +227,10 @@ const MorePhotosModal = ({ images, title, onClose, optimize }: MorePhotosModalPr
         <div className="max-w-6xl mx-auto">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {images.map((img, index) => (
-              <div key={index} className="break-inside-avoid rounded-2xl overflow-hidden group">
+              <div
+                key={index}
+                className="break-inside-avoid rounded-2xl overflow-hidden group"
+              >
                 <img
                   src={optimize(img, 1000)}
                   alt={`${title} view ${index + 1}`}
@@ -225,7 +242,7 @@ const MorePhotosModal = ({ images, title, onClose, optimize }: MorePhotosModalPr
           </div>
         </div>
       </div>
-      
+
       {/* Modal Footer */}
       <div className="p-6 text-center border-t border-white/5 text-white/20 text-[10px] uppercase tracking-[0.5em]">
         EstatePro Private Collection
