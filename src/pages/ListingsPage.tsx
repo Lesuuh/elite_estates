@@ -97,9 +97,9 @@ const ListingsPage = () => {
   };
 
   return (
-    <section className=" ">
+    <section className=" min-h-screen">
       {/* Page Header */}
-      <div className="bg-primary-dark pt-32 pb-20 px-6 text-center">
+      <div className="bg-primary-dark pt-32 pb-20 px-6 text-center ">
         <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 italic">
           The <span className="text-accent">Signature</span> Collection
         </h1>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropertyCard from "../../components/PropertyCard";
 import properties from "../../data";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedListing = () => {
   const [filter, setFilter] = useState("All");
@@ -19,6 +20,8 @@ const FeaturedListing = () => {
 
     return matchesCategory && p.featured;
   });
+
+  const navigate = useNavigate();
 
   return (
     <section className="max-w-7xl mx-auto w-full py-24 px-6">
@@ -66,7 +69,7 @@ const FeaturedListing = () => {
                 animationFillMode: "backwards",
               }}
             >
-              <PropertyCard property={property} />
+              <PropertyCard property={property} view="grid" />
             </div>
           ))
         ) : (
@@ -80,7 +83,10 @@ const FeaturedListing = () => {
 
       {/* Footer Action */}
       <div className="mt-20 flex flex-col items-center">
-        <button className="group cursor-pointer flex items-center gap-4 bg-primary text-white px-10 py-5 rounded-full hover:bg-accent transition-all duration-500 shadow-xl active:scale-95">
+        <button
+          onClick={() => navigate("/listings")}
+          className="group cursor-pointer flex items-center gap-4 bg-primary text-white px-10 py-5 rounded-full hover:bg-accent transition-all duration-500 shadow-xl active:scale-95"
+        >
           <span className="uppercase text-xs font-bold tracking-[0.2em]">
             Explore All Listings
           </span>

@@ -204,9 +204,9 @@ const DevelopmentsPage = () => {
       progress: 65,
       appreciation: "+22%",
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
       description:
-        "A 30-story vertical masterpiece featuring smart-glass technology and private sky-pools. Currently the most anticipated landmark in the district.",
+        "A 30-story vertical masterpiece featuring smart-glass technology and private sky-pools. Positioned to redefine the Lagos skyline.",
     },
     {
       id: "dev-2",
@@ -217,9 +217,61 @@ const DevelopmentsPage = () => {
       progress: 15,
       appreciation: "+18%",
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
       description:
-        "A gated community of 12 ultra-minimalist villas designed for sustainable luxury living and carbon-neutral footprint.",
+        "A gated community of ultra-minimalist villas built around sustainability, privacy, and architectural symmetry.",
+    },
+    {
+      id: "dev-3",
+      name: "Harbor Crest Residences",
+      location: "Port Harcourt, Rivers",
+      status: "Interior Finishing",
+      completion: "Q1 2026",
+      progress: 82,
+      appreciation: "+14%",
+      image:
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
+      description:
+        "Luxury waterfront apartments with panoramic river views and executive rooftop lounges.",
+    },
+    {
+      id: "dev-4",
+      name: "Azure Marina Heights",
+      location: "Victoria Island, Lagos",
+      status: "Pre-Sales",
+      completion: "Q3 2027",
+      progress: 28,
+      appreciation: "+20%",
+      image:
+        "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
+      description:
+        "High-rise luxury apartments offering marina-facing balconies and concierge-driven living.",
+    },
+    {
+      id: "dev-5",
+      name: "Summit Ridge Villas",
+      location: "Asokoro, Abuja",
+      status: "Foundation Complete",
+      completion: "Q4 2026",
+      progress: 40,
+      appreciation: "+16%",
+      image:
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
+      description:
+        "Private hillside villas designed for political and executive elites seeking discretion and architectural boldness.",
+    },
+    {
+      id: "dev-6",
+      name: "Coral Bay Towers",
+      location: "Lekki Phase 1, Lagos",
+      status: "Excavation",
+      completion: "Q1 2029",
+      progress: 10,
+      appreciation: "+25%",
+      image:
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&h=800&q=75&fm=webp",
+      description:
+        "A twin-tower luxury development integrating AI-powered home systems and private club facilities.",
     },
   ];
 
