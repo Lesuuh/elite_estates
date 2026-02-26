@@ -1,11 +1,26 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X, User, Search } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const user = true; // Placeholder for auth state
+  const user = false; // Placeholder for auth state
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [quickSearch, setQuickSearch] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleQuickSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (quickSearch.trim()) {
+      const searchParams = new URLSearchParams();
+      searchParams.set("location", quickSearch.trim());
+      navigate(`/search?location=${encodeURIComponent(quickSearch)}`);
+      setIsSearchOpen(false);
+      setQuickSearch("");
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +88,10 @@ const Navbar = () => {
 
           {/* Right Side Actions */}
           <div className="hidden md:flex items-center space-x-6">
-            <button className="text-white hover:text-accent transition-colors">
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="text-white hover:text-accent transition-colors"
+            >
               <Search size={20} strokeWidth={1.5} />
             </button>
 
@@ -146,6 +164,37 @@ const Navbar = () => {
           </p>
         </div>
       </div>
+
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[100] bg-primary/98 backdrop-blur-xl flex flex-col p-10 animate-in fade-in duration-300">
+          <button
+            onClick={() => setIsSearchOpen(false)}
+            className="self-end text-white/50 hover:text-white mb-20"
+          >
+            <X size={40} strokeWidth={1} />
+          </button>
+
+          <div className="max-w-4xl mx-auto w-full">
+            <p className="text-accent text-[10px] uppercase tracking-[0.4em] font-bold mb-6">
+              Global Asset Search
+            </p>
+            <form onSubmit={handleQuickSearch}>
+              <input
+                autoFocus
+                type="text"
+                value={quickSearch}
+                onChange={(e) => setQuickSearch(e.target.value)}
+                placeholder="Search by location, estate, or property name..."
+                className="w-full bg-transparent border-b border-white/20 pb-6 text-4xl md:text-6xl text-white font-serif focus:outline-none focus:border-accent transition-colors placeholder:text-white/10"
+              />
+              <p className="text-white/30 text-xs mt-6 italic">
+                Press <span className="text-white/60 font-bold">Enter</span> to
+                execute search
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };
