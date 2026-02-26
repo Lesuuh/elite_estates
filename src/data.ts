@@ -3,436 +3,463 @@ import type { Property } from "./types";
 const properties: Property[] = [
   {
     id: 1,
-    title: "Luxury Waterfront Villa in Banana Island",
+    title: "The Obsidian Waterfront Villa",
     category: "villa",
-    price: "2,500,000,000",
+    price: 3500000000,
     location: "Banana Island, Lagos",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 6, bathrooms: 7, area: "850 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 7, bathrooms: 8, area: "1,200 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    ],
   },
   {
     id: 2,
-    title: "Modern Penthouse in Lekki Phase 1",
+    title: "Skyline Glass Penthouse",
     category: "penthouse",
-    price: "450,000,000",
+    price: 850000000,
     location: "Lekki Phase 1, Lagos",
-    image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 4, bathrooms: 4, area: "320 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 5, area: "450 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+      "https://images.unsplash.com/photo-1600607687940-4e2a09695d51",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 3,
-    title: "Contemporary Mansion in Ikoyi",
+    title: "The Heritage Mansion",
     category: "mansion",
-    price: "1,200,000,000",
+    price: 2100000000,
     location: "Ikoyi, Lagos",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 5, bathrooms: 6, area: "600 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 6, bathrooms: 7, area: "950 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
+    ],
   },
   {
     id: 4,
-    title: "Family Villa in Ajah",
+    title: "Bloomfield Family Villa",
     category: "villa",
-    price: "180,000,000",
+    price: 380000000,
     location: "Ajah, Lagos",
-    image: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 3, area: "210 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 4, area: "380 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83",
+      "https://images.unsplash.com/photo-1598228723793-52759bba239c",
+      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf",
+      "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9",
+    ],
   },
   {
     id: 5,
-    title: "Luxury Penthouse in Victoria Island",
+    title: "Azure Marina Penthouse",
     category: "penthouse",
-    price: "650,000,000",
+    price: 950000000,
     location: "Victoria Island, Lagos",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 3, area: "280 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 4, area: "410 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+    ],
   },
   {
     id: 6,
-    title: "Modern Villa in Surulere",
+    title: "The Duke Modern Villa",
     category: "villa",
-    price: "220,000,000",
+    price: 420000000,
     location: "Surulere, Lagos",
-    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1000",
-    featured: false,
-    features: { bedrooms: 4, bathrooms: 4, area: "350 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: false,
+    features: { bedrooms: 5, bathrooms: 5, area: "450 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    ],
   },
   {
     id: 7,
-    title: "Executive Mansion in Ikeja GRA",
+    title: "Governor's Court Mansion",
     category: "mansion",
-    price: "900,000,000",
+    price: 1500000000,
     location: "Ikeja GRA, Lagos",
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 6, bathrooms: 7, area: "720 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 6, bathrooms: 7, area: "820 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 8,
-    title: "Beachfront Villa in Port Harcourt",
+    title: "Atlantic Shore Villa",
     category: "villa",
-    price: "350,000,000",
+    price: 550000000,
     location: "Port Harcourt, Rivers",
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 4, bathrooms: 4, area: "400 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 5, bathrooms: 5, area: "500 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+      "https://images.unsplash.com/photo-1544984243-ec57ea16fe25",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206",
+    ],
   },
   {
     id: 9,
-    title: "Penthouse with City View in Abuja",
+    title: "The Diplomatic Penthouse",
     category: "penthouse",
-    price: "550,000,000",
+    price: 1200000000,
     location: "Maitama, Abuja",
-    image: "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 3, area: "280 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1464890100898-a385f744067f?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 4, area: "480 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1493397212122-2b85edf8675f",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+      "https://images.unsplash.com/photo-1464890100898-a385f744067f",
+    ],
   },
   {
     id: 10,
-    title: "Mansion in Kano GRA",
+    title: "Emirate Style Mansion",
     category: "mansion",
-    price: "1,100,000,000",
+    price: 1100000000,
     location: "Kano GRA, Kano",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1000",
-    featured: false,
-    features: { bedrooms: 5, bathrooms: 5, area: "650 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: false,
+    features: { bedrooms: 8, bathrooms: 9, area: "1,400 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 11,
-    title: "Luxury Apartment in Ibadan",
+    title: "Seven Hills Apartment",
     category: "apartment",
-    price: "120,000,000",
+    price: 145000000,
     location: "Ring Road, Ibadan",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 2, bathrooms: 2, area: "120 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 3, bathrooms: 3, area: "180 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+    ],
   },
   {
     id: 12,
-    title: "Villa in Owerri",
+    title: "Douglas Road Villa",
     category: "villa",
-    price: "280,000,000",
+    price: 350000000,
     location: "Owerri, Imo",
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=1000",
-    featured: false,
-    features: { bedrooms: 3, bathrooms: 3, area: "320 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: false,
+    features: { bedrooms: 5, bathrooms: 5, area: "520 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1510798831971-661eb04b3739",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+      "https://images.unsplash.com/photo-1598228723793-52759bba239c",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+    ],
   },
   {
     id: 13,
-    title: "Penthouse in Uyo",
+    title: "The Champion Penthouse",
     category: "penthouse",
-    price: "480,000,000",
+    price: 480000000,
     location: "Uyo, Akwa Ibom",
-    image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 3, area: "290 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 4, area: "380 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1493397212122-2b85edf8675f",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+    ],
   },
   {
     id: 14,
-    title: "Mansion in Calabar",
+    title: "Canaan Mansion",
     category: "mansion",
-    price: "950,000,000",
+    price: 950000000,
     location: "Calabar, Cross River",
-    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 6, bathrooms: 6, area: "700 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 6, bathrooms: 6, area: "750 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 15,
-    title: "Apartment in Abuja Central",
+    title: "Unity Central Apartment",
     category: "apartment",
-    price: "150,000,000",
+    price: 280000000,
     location: "Central Area, Abuja",
-    image: "https://images.unsplash.com/photo-1460317442991-0ec239fe976a?auto=format&fit=crop&q=80&w=1000",
-    featured: false,
-    features: { bedrooms: 2, bathrooms: 2, area: "130 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1460317442991-0ec239fe976a?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: false,
+    features: { bedrooms: 3, bathrooms: 3, area: "210 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1460317442991-0ec239fe976a",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "https://images.unsplash.com/photo-1493246507139-91e8bef99c17",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+    ],
   },
   {
     id: 16,
-    title: "Executive Estate in Ajah",
+    title: "Abijo Executive Villa",
     category: "villa",
-    price: "180,000,000",
+    price: 450000000,
     location: "Ajah, Lagos",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 3, area: "210 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 5, bathrooms: 6, area: "480 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    ],
   },
   {
     id: 17,
-    title: "Executive Penthouse in Victoria Island",
+    title: "The Grand Eko Penthouse",
     category: "penthouse",
-    price: "750,000,000",
+    price: 1150000000,
     location: "Victoria Island, Lagos",
-    image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 4, bathrooms: 4, area: "300 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 5, bathrooms: 5, area: "550 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+    ],
   },
   {
     id: 18,
-    title: "Modern Villa in Surulere",
+    title: "The Stadium Villa",
     category: "villa",
-    price: "220,000,000",
+    price: 320000000,
     location: "Surulere, Lagos",
-    image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
+    image:
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
     featured: false,
     features: { bedrooms: 4, bathrooms: 4, area: "350 sqm" },
     images: [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 19,
-    title: "Luxury Apartment in Ikeja",
+    title: "Ikeja Luxury Suites",
     category: "apartment",
-    price: "200,000,000",
+    price: 240000000,
     location: "Ikeja, Lagos",
-    image: "https://images.unsplash.com/photo-1545324418-f1d3ac59749d?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 2, area: "250 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1545324418-f1d3ac59749d?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000"
-    ]
-  },
-  {
-    id: 20,
-    title: "Penthouse with City View in Maitama",
-    category: "penthouse",
-    price: "550,000,000",
-    location: "Maitama, Abuja",
-    image: "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
     featured: true,
     features: { bedrooms: 3, bathrooms: 3, area: "280 sqm" },
     images: [
+      "https://images.unsplash.com/photo-1545324418-f1d3ac59749d",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+      "https://images.unsplash.com/photo-1600607687940-4e2a09695d51",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+    ],
+  },
+  {
+    id: 20,
+    title: "Transcorp View Penthouse",
+    category: "penthouse",
+    price: 1300000000,
+    location: "Maitama, Abuja",
+    image:
       "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 4, area: "520 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1493397212122-2b85edf8675f",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+    ],
   },
   {
     id: 21,
-    title: "Mansion in Asokoro",
+    title: "The Peak Peak Mansion",
     category: "mansion",
-    price: "1,000,000,000",
+    price: 2800000000,
     location: "Asokoro, Abuja",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 5, bathrooms: 5, area: "600 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 8, bathrooms: 9, area: "1,350 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 22,
-    title: "Modern Villa in Garki",
+    title: "Garki Heights Villa",
     category: "villa",
-    price: "380,000,000",
+    price: 480000000,
     location: "Garki, Abuja",
-    image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1000",
-    featured: false,
-    features: { bedrooms: 4, bathrooms: 4, area: "320 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: false,
+    features: { bedrooms: 5, bathrooms: 5, area: "480 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+      "https://images.unsplash.com/photo-1598228723793-52759bba239c",
+    ],
   },
   {
     id: 23,
-    title: "Luxury Apartment in Wuse",
+    title: "Wuse District Apartment",
     category: "apartment",
-    price: "150,000,000",
+    price: 320000000,
     location: "Wuse, Abuja",
-    image: "https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 2, bathrooms: 2, area: "180 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 3, bathrooms: 3, area: "240 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1493246507139-91e8bef99c17",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+    ],
   },
   {
     id: 24,
-    title: "Beachfront Villa in Port Harcourt",
+    title: "The Port Beach Villa",
     category: "villa",
-    price: "350,000,000",
+    price: 680000000,
     location: "Port Harcourt, Rivers",
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 4, bathrooms: 4, area: "400 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 6, bathrooms: 6, area: "620 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+      "https://images.unsplash.com/photo-1544984243-ec57ea16fe25",
+    ],
   },
   {
     id: 25,
-    title: "Penthouse with Lagoon View",
+    title: "Lagoon Crest Penthouse",
     category: "penthouse",
-    price: "480,000,000",
+    price: 520000000,
     location: "GRA, Port Harcourt",
-    image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 3, bathrooms: 3, area: "290 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 4, bathrooms: 4, area: "390 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "https://images.unsplash.com/photo-1493397212122-2b85edf8675f",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
+    ],
   },
   {
     id: 26,
-    title: "Executive Mansion in Trans Amadi",
+    title: "Oil City Executive Mansion",
     category: "mansion",
-    price: "900,000,000",
+    price: 1350000000,
     location: "Trans Amadi, Port Harcourt",
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
-    featured: true,
-    features: { bedrooms: 5, bathrooms: 6, area: "600 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000"
-    ]
+    featured: true,
+    features: { bedrooms: 6, bathrooms: 7, area: "880 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    ],
   },
   {
     id: 27,
-    title: "Modern Apartment in Rumuola",
+    title: "Rumuola Luxury Apartment",
     category: "apartment",
-    price: "160,000,000",
+    price: 190000000,
     location: "Rumuola, Port Harcourt",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-    featured: false,
-    features: { bedrooms: 2, bathrooms: 2, area: "150 sqm" },
-    images: [
+    image:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1460317442991-0ec239fe976a?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1000"
-    ]
-  }
+    featured: false,
+    features: { bedrooms: 3, bathrooms: 3, area: "220 sqm" },
+    images: [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      "https://images.unsplash.com/photo-1493246507139-91e8bef99c17",
+      "https://images.unsplash.com/photo-1460317442991-0ec239fe976a",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+    ],
+  },
 ];
 
 export default properties;

@@ -30,7 +30,7 @@ const PropertyCard = ({ property, view = "grid" }: PropertyCardProps) => {
           <div>
             <div className="flex justify-between items-start mb-2">
               <h2 className="font-serif text-xl text-primary tracking-tight">
-                ₦{property.price}
+                ₦{property.price.toLocaleString("en-NG")}
               </h2>
               {property.featured && (
                 <span className="bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -115,16 +115,16 @@ const PropertyCard = ({ property, view = "grid" }: PropertyCardProps) => {
         </div>
 
         {/* Content Section */}
-        <div className="p-7">
+        <div className="p-4">
           <div className="flex justify-between items-start mb-2">
             <h2 className="font-serif text-3xl text-primary tracking-tight">
-              ₦{property.price}
+              ₦{property.price.toLocaleString("en-NG")}
             </h2>
-            <div className="flex items-center gap-1 text-accent">
+            {/* <div className="flex items-center gap-1 text-accent">
               <span className="text-[10px] font-bold uppercase tracking-tighter">
                 Listed by EstatePro
               </span>
-            </div>
+            </div> */}
           </div>
 
           <h3 className="text-lg font-medium text-gray-900 group-hover:text-accent transition-colors duration-300">

@@ -50,17 +50,17 @@ const ListingsPage = () => {
   };
 
   const priceOptions = [
-    { label: "Under ₦5M", min: 0, max: 5000000 },
-    { label: "₦5M – ₦20M", min: 5000000, max: 20000000 },
-    { label: "₦20M – ₦100M", min: 20000000, max: 100000000 },
-    { label: "₦100M+", min: 100000000, max: Infinity },
+    { label: "Under ₦250M", min: 0, max: 250000000 },
+    { label: "₦250M – ₦750M", min: 250000000, max: 750000000 },
+    { label: "₦750M – ₦1.5B", min: 750000000, max: 1500000000 },
+    { label: "₦1.5B+", min: 1500000000, max: Infinity },
   ];
 
   const parsePrice = (price: string) => Number(price.replace(/,/g, ""));
 
   const filteredProperties = properties.filter((property) => {
     // Price
-    const propertyPrice = parsePrice(property.price);
+    const propertyPrice = parsePrice(String(property.price));
     if (filters.price) {
       if (
         propertyPrice < filters.price.min ||

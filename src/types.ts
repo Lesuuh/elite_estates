@@ -10,7 +10,7 @@ export interface Property {
   id: number;
   title: string;
   category: PropertyCategory;
-  price: string;
+  price: number;
   location: string;
   image: string;
   images: string[];

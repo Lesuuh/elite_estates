@@ -166,7 +166,9 @@ const PropertyDetails = () => {
             <p className="text-accent text-xs uppercase tracking-[0.3em] font-bold mb-4">
               Investment Price
             </p>
-            <h3 className="text-4xl font-serif mb-10">₦{property.price}</h3>
+            <h3 className="text-4xl font-serif mb-10">
+              ₦{property.price.toLocaleString("en-NG")}
+            </h3>
             <button className="w-full bg-accent text-primary py-5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white transition-all">
               Acquire Property
             </button>
