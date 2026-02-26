@@ -41,13 +41,9 @@ const SearchResults = () => {
 
   // 4. Filtering Logic
   const results = properties.filter((p) => {
-    // Location: Match against the last part of the address (usually the State/City)
-    const addressParts = p.location.split(",");
-    const cityState = addressParts[addressParts.length - 1]
-      .trim()
-      .toLowerCase();
     const locationMatch = location
-      ? cityState.includes(location.toLowerCase())
+      ? p.location.toLowerCase().includes(location.toLowerCase()) ||
+        p.title.toLowerCase().includes(location.toLowerCase())
       : true;
 
     // Category: Direct match
