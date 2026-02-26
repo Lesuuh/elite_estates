@@ -40,20 +40,22 @@ const FeaturedListing = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex bg-gray-100 p-1 rounded-full border border-gray-200">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-full text-xs uppercase tracking-widest font-bold transition-all ${
-                filter === cat
-                  ? "bg-white text-primary shadow-sm"
-                  : "text-gray-400 hover:text-primary"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="w-full overflow-x-auto">
+          <div className="flex w-max bg-gray-100 p-1 rounded-full border border-gray-200 gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm uppercase tracking-widest font-bold whitespace-nowrap transition-all ${
+                  filter === cat
+                    ? "bg-white text-primary shadow-sm"
+                    : "text-gray-400 hover:text-primary"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

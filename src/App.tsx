@@ -9,12 +9,14 @@ import DevelopmentsPage from "./pages/DevelopmentPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import SearchResults from "./pages/SearchPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
       <Navbar />
 
+      <ScrollToTop />
       {/* <div className=""> */}
       <Routes>
         <Route path="/" element={<Home />} />
