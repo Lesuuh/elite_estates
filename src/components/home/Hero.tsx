@@ -53,7 +53,7 @@ const Hero = () => {
 
   return (
     <div
-      className="h-screen w-full bg-cover bg-center relative flex items-center justify-center"
+      className="min-h-screen w-full pt-30 pb-10 md:pt-0 bg-cover bg-center relative flex items-center justify-center"
       // New reliable high-res luxury architecture image
       style={{
         backgroundImage:
