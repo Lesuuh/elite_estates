@@ -9,11 +9,14 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import AcquireModal from "../components/AcquireModal";
 
 const PropertyDetails = () => {
   const { id } = useParams();
   const property = properties.find((p) => p.id === Number(id));
   const [morePhotosModalOpen, setMorePhotosModalOpen] = useState(false);
+
+  const [isAcquireModalOpen, setIsAcquireModalOpen] = useState(false);
 
   useEffect(() => {
     if (morePhotosModalOpen) {
@@ -21,7 +24,7 @@ const PropertyDetails = () => {
     } else {
       document.body.style.overflow = "unset";
     }
-  }, [morePhotosModalOpen]);
+  }, [morePhotosModalOpen, isAcquireModalOpen]);
 
   if (!property)
     return (
@@ -169,7 +172,10 @@ const PropertyDetails = () => {
             <h3 className="text-4xl font-serif mb-10">
               ₦{property.price.toLocaleString("en-NG")}
             </h3>
-            <button className="w-full bg-accent text-primary py-5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white transition-all">
+            <button
+              onClick={() => setIsAcquireModalOpen(true)}
+              className="w-full bg-accent text-primary py-5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white transition-all active:scale-[0.98]"
+            >
               Acquire Property
             </button>
             <p className="text-center text-white/40 text-[10px] mt-6 leading-relaxed">
@@ -185,6 +191,14 @@ const PropertyDetails = () => {
           title={property.title}
           onClose={() => setMorePhotosModalOpen(false)}
           optimize={optimize}
+        />
+      )}
+
+      {/* NEW: ACQUISITION MODAL */}
+      {isAcquireModalOpen && (
+        <AcquireModal
+          property={property}
+          onClose={() => setIsAcquireModalOpen(false)}
         />
       )}
     </section>
