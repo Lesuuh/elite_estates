@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, User, Search } from "lucide-react";
+import { Menu, X, User, Search, ArrowUpRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 
@@ -132,38 +132,72 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Side Drawer */}
+    {/* Mobile Side Drawer */}
       <div
-        className={`fixed inset-0 bg-primary z-70 p-10 flex flex-col transform transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-primary z-[70] p-10 flex flex-col transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <button
-          onClick={() => setIsOpen(false)}
-          className="self-end text-white/50 hover:text-white"
-        >
-          <X size={40} strokeWidth={1} />
-        </button>
+        <div className="flex justify-between items-center">
+          {/* Mobile Portal Link (if Auth) */}
+          {isAuthenticated ? (
+            <Link
+              to="/auth/portal"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-3 bg-white/5 border border-white/10 p-2 rounded-full"
+            >
+              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary font-bold">
+                {user?.name.charAt(0) || "U"}
+              </div>
+              <div className="pr-4">
+                <p className="text-[10px] uppercase tracking-widest text-white/40 leading-none mb-1">Portfolio</p>
+                <p className="text-sm font-serif text-white italic">Go to Dashboard</p>
+              </div>
+            </Link>
+          ) : (
+            <div className="w-10" /> /* Spacer */
+          )}
+          
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-white/50 hover:text-white"
+          >
+            <X size={40} strokeWidth={1} />
+          </button>
+        </div>
 
-        <div className="mt-20 space-y-10">
+        <div className="mt-20 space-y-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block text-5xl font-serif cursor-pointer text-white hover:text-accent transition-colors italic"
+              className="block text-5xl font-serif cursor-pointer text-white hover:text-accent transition-colors italic leading-tight"
             >
               {link.name}
             </Link>
           ))}
         </div>
 
-        <div className="mt-auto pt-10 border-t border-white/10">
-          <p className="text-accent text-[10px] uppercase tracking-[0.3em] font-bold mb-4">
-            Concierge Desk
-          </p>
-          <p className="text-white text-2xl font-light tracking-tight">
-            +234 800 ESTATE PRO
-          </p>
+        <div className="mt-auto pt-10 border-t border-white/10 flex flex-col gap-8">
+          {!isAuthenticated && (
+            <Link
+              to="/auth"
+              onClick={() => setIsOpen(false)}
+              className="text-accent text-lg font-serif italic border-b border-accent/20 pb-4 flex justify-between items-center"
+            >
+              Sign into Portal <ArrowUpRight size={20} />
+            </Link>
+          )}
+
+          <div>
+            <p className="text-accent text-[10px] uppercase tracking-[0.3em] font-bold mb-2">
+              Concierge Desk
+            </p>
+            <p className="text-white text-2xl font-light tracking-tight">
+              +234 800 ESTATE PRO
+            </p>
+          </div>
         </div>
       </div>
 

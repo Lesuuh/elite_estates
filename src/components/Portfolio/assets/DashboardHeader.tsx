@@ -17,13 +17,12 @@ const DashboardHeader = ({
   onInquire,
   onList,
 }: HeaderProps) => {
-  
   return (
     <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
       <div>
         <h1 className="text-4xl font-serif text-primary">{title}</h1>
         <p className="text-gray-500 font-light mt-1">
-          Welcome back, {userName}
+          Welcome back, <span className="font-medium">{userName}</span>
         </p>
       </div>
 
