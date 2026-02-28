@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, User, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const user = false; // Placeholder for auth state
+  const { isAuthenticated, user } = useAuth(); // Assuming useAuth is imported and provides auth state
+  // const user = false; // Placeholder for auth state
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [quickSearch, setQuickSearch] = useState("");
 
@@ -97,13 +99,13 @@ const Navbar = () => {
 
             <div className="h-5 w-px bg-white/20"></div>
 
-            {user ? (
+            {isAuthenticated ? (
               <Link
-                to="/portfolio"
+                to="/auth/portal"
                 className="flex items-center gap-3 pl-2 pr-1 py-1 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all group"
               >
                 <span className="text-[10px] uppercase tracking-widest font-bold text-white/80 ml-2">
-                  Portfolio
+                  {user?.name.split(" ")[0] || "User"}
                 </span>
                 <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-primary">
                   <User size={16} />

@@ -1,6 +1,7 @@
 import { Heart, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { Property } from "../types";
+import { useWatchlist } from "../context/watchlist-context";
 
 type PropertyCardProps = {
   property: Property;
@@ -8,6 +9,18 @@ type PropertyCardProps = {
 };
 
 const PropertyCard = ({ property, view = "grid" }: PropertyCardProps) => {
+  const { isWatchlisted, addToWatchlist, removeFromWatchlist } = useWatchlist();
+
+  const handleToggleWatchlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (isWatchlisted(property.id.toString())) {
+      removeFromWatchlist(property.id.toString());
+    } else {
+      addToWatchlist(property);
+    }
+  };
+
   if (view === "list") {
     // LIST VIEW
     return (
@@ -102,8 +115,15 @@ const PropertyCard = ({ property, view = "grid" }: PropertyCardProps) => {
           </div>
 
           {/* Favorite Button */}
-          <button className="absolute top-5 right-5 z-10 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-accent hover:text-primary transition-all duration-300">
-            <Heart size={18} strokeWidth={1.5} />
+          <button
+            onClick={handleToggleWatchlist}
+            className="absolute top-5 right-5 z-10 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-accent hover:text-primary transition-all duration-300"
+          >
+            {isWatchlisted(property.id.toString()) ? (
+              <Heart size={16} fill="currentColor" strokeWidth={0} />
+            ) : (
+              <Heart size={16} strokeWidth={1.5} />
+            )}
           </button>
 
           {/* Overlay on Hover */}

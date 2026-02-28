@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LogOut } from "lucide-react";
+import { useAuth } from "../../../context/auth-context";
 
 interface SidebarProps {
   navigation: any[];
@@ -8,6 +9,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ navigation, activeTab, setActiveTab }: SidebarProps) => {
+  const { logout } = useAuth();
   return (
     <aside className="w-64 bg-primary hidden lg:flex flex-col p-8 sticky top-0 h-screen">
       <div className="mb-12">
@@ -40,7 +42,10 @@ const Sidebar = ({ navigation, activeTab, setActiveTab }: SidebarProps) => {
         ))}
       </nav>
 
-      <button className="mt-auto flex items-center gap-4 px-4 py-3 text-red-400 hover:text-red-300 transition-colors">
+      <button
+        onClick={() => logout()}
+        className="mt-auto flex items-center gap-4 px-4 py-3 text-red-400 hover:text-red-300 transition-colors"
+      >
         <LogOut size={18} />
         <span className="text-xs uppercase tracking-widest font-bold">
           Sign Out

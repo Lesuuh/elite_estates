@@ -1,18 +1,39 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Mail, Lock, User } from "lucide-react";
+import { useAuth } from "../context/auth-context";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { login } = useAuth();
+
+  const TEST_ACCOUNT = {
+    id: "test-001",
+    name: "Adeyemi",
+    email: "test@estatepro.com",
+    password: "demo123",
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      setLoading(false);
-      navigate("/portfolio");
+      if (email === TEST_ACCOUNT.email && password === TEST_ACCOUNT.password) {
+        setLoading(false);
+        login(TEST_ACCOUNT);
+        navigate("/auth/portal");
+        setError("");
+      } else {
+        setLoading(false);
+        setError("Invalid email or password");
+      }
     }, 1500);
   };
 
@@ -70,6 +91,14 @@ const Auth = () => {
             </p>
           </div>
 
+          <div className="mb-6 text-xs text-gray-400 bg-white/5 border border-white/10 p-4 rounded-xl">
+            <p className="uppercase tracking-widest text-accent mb-2 font-bold">
+              Demo Account
+            </p>
+            <p>Email: test@estatepro.com</p>
+            <p>Password: demo123</p>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             {!isLogin && (
               <div className="relative group">
@@ -79,6 +108,9 @@ const Auth = () => {
                 />
                 <input
                   type="text"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Full Name"
                   required
                   className="w-full bg-white/5 border border-white/10 py-4 pl-12 pr-4 rounded-xl text-white focus:outline-none focus:border-accent/50 transition-all"
@@ -93,6 +125,9 @@ const Auth = () => {
               />
               <input
                 type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
                 required
                 className="w-full bg-white/5 border border-white/10 py-4 pl-12 pr-4 rounded-xl text-white focus:outline-none focus:border-accent/50 transition-all"
@@ -106,11 +141,18 @@ const Auth = () => {
               />
               <input
                 type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
                 className="w-full bg-white/5 border border-white/10 py-4 pl-12 pr-4 rounded-xl text-white focus:outline-none focus:border-accent/50 transition-all"
               />
             </div>
+
+            {error && (
+              <div className="text-red-400 text-sm font-light">{error}</div>
+            )}
 
             <button
               type="submit"

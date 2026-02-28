@@ -12,10 +12,18 @@ import SearchResults from "./pages/SearchPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Auth from "./pages/Auth";
 import Portfolio from "./pages/Portfolio";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from "./context/auth-context";
+import { useWatchlist } from "./context/watchlist-context";
 
 function App() {
   const location = useLocation();
   const isAuthSection = location.pathname.startsWith("/auth");
+
+  const { isAuthenticated } = useAuth();
+  const { items } = useWatchlist();
+  console.log(items);
+  console.log(isAuthenticated);
   return (
     <>
       {!isAuthSection && <Navbar />}
@@ -25,12 +33,27 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/listings" element={<ListingsPage />} />
         <Route path={`/properties/:id`} element={<PropertyDetails />} />
-        <Route path="/developments" element={<DevelopmentsPage />} />
+        <Route
+          path="/developments"
+          element={
+            <ProtectedRoute>
+              <DevelopmentsPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="about-us" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="search" element={<SearchResults />} />
         <Route path="auth" element={<Auth />} />
-        <Route path="auth/portal" element={<Portfolio />} />
+
+        <Route
+          path="auth/portal"
+          element={
+            <ProtectedRoute>
+              <Portfolio />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="*"
           element={

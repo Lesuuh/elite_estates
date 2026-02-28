@@ -10,6 +10,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-15T10:00:00Z",
     features: { bedrooms: 7, bathrooms: 8, area: "1,200 sqm" },
     images: [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
@@ -27,6 +29,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Reserved",
+    createdAt: "2026-01-20T14:30:00Z",
     features: { bedrooms: 4, bathrooms: 5, area: "450 sqm" },
     images: [
       "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
@@ -44,6 +48,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2025-12-05T09:15:00Z",
     features: { bedrooms: 6, bathrooms: 7, area: "950 sqm" },
     images: [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
@@ -61,6 +67,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Sold",
+    createdAt: "2025-11-28T16:45:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "380 sqm" },
     images: [
       "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83",
@@ -78,6 +86,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-01T11:20:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "410 sqm" },
     images: [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
@@ -95,6 +105,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Available",
+    createdAt: "2026-02-10T08:00:00Z",
     features: { bedrooms: 5, bathrooms: 5, area: "450 sqm" },
     images: [
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
@@ -112,6 +124,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-01-15T12:00:00Z",
     features: { bedrooms: 6, bathrooms: 7, area: "820 sqm" },
     images: [
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
@@ -129,6 +143,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Reserved",
+    createdAt: "2025-12-20T15:30:00Z",
     features: { bedrooms: 5, bathrooms: 5, area: "500 sqm" },
     images: [
       "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2",
@@ -146,6 +162,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-22T09:45:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "480 sqm" },
     images: [
       "https://images.unsplash.com/photo-1493397212122-2b85edf8675f",
@@ -163,6 +181,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Available",
+    createdAt: "2026-01-30T10:00:00Z",
     features: { bedrooms: 8, bathrooms: 9, area: "1,400 sqm" },
     images: [
       "https://images.unsplash.com/photo-1564013799919-ab600027ffc6",
@@ -180,6 +200,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-05T13:15:00Z",
     features: { bedrooms: 3, bathrooms: 3, area: "180 sqm" },
     images: [
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
@@ -197,6 +219,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Sold",
+    createdAt: "2025-10-15T11:00:00Z",
     features: { bedrooms: 5, bathrooms: 5, area: "520 sqm" },
     images: [
       "https://images.unsplash.com/photo-1510798831971-661eb04b3739",
@@ -214,6 +238,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-18T14:00:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "380 sqm" },
     images: [
       "https://images.unsplash.com/photo-1567496898669-ee935f5f647a",
@@ -231,6 +257,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-01-05T09:00:00Z",
     features: { bedrooms: 6, bathrooms: 6, area: "750 sqm" },
     images: [
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
@@ -248,6 +276,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1460317442991-0ec239fe976a?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Available",
+    createdAt: "2026-02-25T16:00:00Z",
     features: { bedrooms: 3, bathrooms: 3, area: "210 sqm" },
     images: [
       "https://images.unsplash.com/photo-1460317442991-0ec239fe976a",
@@ -265,6 +295,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-12T10:30:00Z",
     features: { bedrooms: 5, bathrooms: 6, area: "480 sqm" },
     images: [
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
@@ -282,6 +314,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-08T11:00:00Z",
     features: { bedrooms: 5, bathrooms: 5, area: "550 sqm" },
     images: [
       "https://images.unsplash.com/photo-1560448204-603b3fc33ddc",
@@ -299,6 +333,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Sold",
+    createdAt: "2025-09-10T15:00:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "350 sqm" },
     images: [
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
@@ -316,6 +352,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1545324418-f1d3ac59749d?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-01-25T13:00:00Z",
     features: { bedrooms: 3, bathrooms: 3, area: "280 sqm" },
     images: [
       "https://images.unsplash.com/photo-1545324418-f1d3ac59749d",
@@ -333,6 +371,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1493397212122-2b85edf8675f?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-14T10:00:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "520 sqm" },
     images: [
       "https://images.unsplash.com/photo-1493397212122-2b85edf8675f",
@@ -350,6 +390,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-01-02T12:00:00Z",
     features: { bedrooms: 8, bathrooms: 9, area: "1,350 sqm" },
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
@@ -367,6 +409,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Available",
+    createdAt: "2026-02-03T11:00:00Z",
     features: { bedrooms: 5, bathrooms: 5, area: "480 sqm" },
     images: [
       "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf",
@@ -384,6 +428,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-01-18T10:00:00Z",
     features: { bedrooms: 3, bathrooms: 3, area: "240 sqm" },
     images: [
       "https://images.unsplash.com/photo-1493246507139-91e8bef99c17",
@@ -401,6 +447,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2025-12-10T14:30:00Z",
     features: { bedrooms: 6, bathrooms: 6, area: "620 sqm" },
     images: [
       "https://images.unsplash.com/photo-1519046904884-53103b34b206",
@@ -418,6 +466,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-02-20T10:00:00Z",
     features: { bedrooms: 4, bathrooms: 4, area: "390 sqm" },
     images: [
       "https://images.unsplash.com/photo-1567496898669-ee935f5f647a",
@@ -435,6 +485,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
     featured: true,
+    status: "Available",
+    createdAt: "2026-01-08T09:00:00Z",
     features: { bedrooms: 6, bathrooms: 7, area: "880 sqm" },
     images: [
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
@@ -452,6 +504,8 @@ const properties: Property[] = [
     image:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
     featured: false,
+    status: "Available",
+    createdAt: "2026-02-18T16:00:00Z",
     features: { bedrooms: 3, bathrooms: 3, area: "220 sqm" },
     images: [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",

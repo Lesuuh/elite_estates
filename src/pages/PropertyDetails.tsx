@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import AcquireModal from "../components/AcquireModal";
+import { useAuth } from "../context/auth-context";
+import AuthGatewayModal from "../components/AuthGateway";
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -17,6 +19,8 @@ const PropertyDetails = () => {
   const [morePhotosModalOpen, setMorePhotosModalOpen] = useState(false);
 
   const [isAcquireModalOpen, setIsAcquireModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     if (morePhotosModalOpen) {
@@ -24,7 +28,15 @@ const PropertyDetails = () => {
     } else {
       document.body.style.overflow = "unset";
     }
-  }, [morePhotosModalOpen, isAcquireModalOpen]);
+  }, [morePhotosModalOpen, isAcquireModalOpen, isAuthModalOpen]);
+
+  const handleAcquireClick = () => {
+    if (isAuthenticated) {
+      setIsAcquireModalOpen(true);
+    } else {
+      setIsAuthModalOpen(true);
+    }
+  };
 
   if (!property)
     return (
@@ -173,7 +185,7 @@ const PropertyDetails = () => {
               ₦{property.price.toLocaleString("en-NG")}
             </h3>
             <button
-              onClick={() => setIsAcquireModalOpen(true)}
+              onClick={handleAcquireClick}
               className="w-full bg-accent text-primary py-5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white transition-all active:scale-[0.98]"
             >
               Acquire Property
@@ -200,6 +212,10 @@ const PropertyDetails = () => {
           property={property}
           onClose={() => setIsAcquireModalOpen(false)}
         />
+      )}
+
+      {isAuthModalOpen && (
+        <AuthGatewayModal onClose={() => setIsAuthModalOpen(false)} />
       )}
     </section>
   );

@@ -8,31 +8,34 @@ import {
   Heart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useWatchlist } from "../../../context/watchlist-context";
 
 const Watchlist = () => {
   // Mock data for the watchlist
-  const [items, setItems] = useState([
-    {
-      id: 101,
-      title: "The Obsidian Manor",
-      location: "Ikoyi, Lagos",
-      price: "₦3.2B",
-      image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
-      status: "Available",
-      addedDate: "2 days ago",
-    },
-    {
-      id: 102,
-      title: "Azure Waterfront Villa",
-      location: "Lekki Phase 1, Lagos",
-      price: "₦850M",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800",
-      status: "Price Dropped",
-      addedDate: "1 week ago",
-    },
-  ]);
+  const { items, removeFromWatchlist } = useWatchlist();
+
+  // const [items, setItems] = useState([
+  //   {
+  //     id: 101,
+  //     title: "The Obsidian Manor",
+  //     location: "Ikoyi, Lagos",
+  //     price: "₦3.2B",
+  //     image:
+  //       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
+  //     status: "Available",
+  //     addedDate: "2 days ago",
+  //   },
+  //   {
+  //     id: 102,
+  //     title: "Azure Waterfront Villa",
+  //     location: "Lekki Phase 1, Lagos",
+  //     price: "₦850M",
+  //     image:
+  //       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800",
+  //     status: "Price Dropped",
+  //     addedDate: "1 week ago",
+  //   },
+  // ]);
 
   const removeItem = (id: number) => {
     setItems(items.filter((item) => item.id !== id));

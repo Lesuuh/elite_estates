@@ -12,8 +12,16 @@ export interface Property {
   category: PropertyCategory;
   price: number;
   location: string;
+  status: string;
   image: string;
   images: string[];
   featured: boolean;
   features: PropertyFeatures;
+  createdAt: string;
 }
+
+export type User = {
+  id: string;
+  email: string;
+  name: string;
+};
