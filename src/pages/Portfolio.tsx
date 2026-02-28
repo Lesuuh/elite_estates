@@ -15,15 +15,155 @@ import MyAssets from "../components/Portfolio/tabs/MyAssets";
 import Watchlist from "../components/Portfolio/tabs/Watchlist";
 import Transactions from "../components/Portfolio/tabs/Transactions";
 import { useAuth } from "../context/auth-context";
+import { useWatchlist } from "../context/watchlist-context";
 
+export interface Property {
+  id: number;
+  title: string;
+  location: string;
+  price: string; // formatted like "₦1.8B"
+  status: string; // e.g., "Acquired", "In Escrow"
+  image: string;
+}
+
+// or React.ReactNode if you prefer
+
+export interface Stat {
+  label: string;
+  value: string | number;
+  icon: React.ReactNode; // Lucide icon component
+}
+
+export interface NavigationItem {
+  id: string; // "my-assets", "watchlist", etc.
+  label: string;
+  icon: React.ReactNode;
+}
+
+export interface ModalLabels {
+  assetSubmission: string;
+  title: string;
+  location: string;
+  price: string;
+  media: string;
+  dropHint: string;
+  sizeHint: string;
+  saveDraft: string;
+  submit: string;
+}
+
+export interface ModalPlaceholders {
+  title: string;
+  location: string;
+  price: string;
+}
+
+export interface ModalFields {
+  titlePlaceholder: string;
+  locationPlaceholder: string;
+  pricePlaceholder: string;
+}
+
+export interface Modal {
+  title: string;
+  headerTitle: string;
+  subtext: string;
+  headerSub: string;
+  labels: ModalLabels;
+  placeholders: ModalPlaceholders;
+  fields: ModalFields;
+  disclaimer: string;
+}
+
+export interface Defaults {
+  userName: string;
+  pageTitle: string;
+  initialTab: string;
+  growthRate: string;
+  sectionHeaders: {
+    holdings: string;
+    valuation: string;
+  };
+  user: {
+    name: string;
+  };
+  dashboard: {
+    title: string;
+    growthRate: string;
+  };
+  stats: Stat[];
+  navigation: NavigationItem[];
+  labels: {
+    signOut: string;
+  };
+  cta: {
+    inquire: string;
+    list: string;
+  };
+  modal: Modal;
+}
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("my-assets");
   const [isListingModalOpen, setIsListingModalOpen] = useState(false);
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { items } = useWatchlist();
 
-  const defaults = {
-    // top‑level aliases
+  const properties: Property[] = [
+    {
+      id: 1,
+      title: "The Glass Pavilion",
+      location: "Banana Island, Lagos",
+      price: "₦1.8B",
+      status: "Acquired",
+      image:
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800",
+    },
+    {
+      id: 2,
+      title: "Skyline Penthouse",
+      location: "Eko Atlantic, Victoria Island",
+      price: "₦2.4B",
+      status: "Acquired",
+      image:
+        "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      id: 3,
+      title: "The Heritage Mansion",
+      location: "Ikoyi, Lagos",
+      price: "₦2.1B",
+      status: "Under Management",
+      image:
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      id: 4,
+      title: "Aso Rock View Estate",
+      location: "Asokoro, Abuja",
+      price: "₦4.5B",
+      status: "In Escrow",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
+    },
+  ];
+
+  const portfolioValue = properties.reduce((total, property) => {
+    const priceStr = property.price.replace(/₦|,/g, "").toUpperCase(); // remove ₦ and commas
+    let priceNum = 0;
+
+    if (priceStr.endsWith("B")) {
+      priceNum = parseFloat(priceStr.replace("B", "")) * 1_000_000_000;
+    } else if (priceStr.endsWith("M")) {
+      priceNum = parseFloat(priceStr.replace("M", "")) * 1_000_000;
+    } else {
+      priceNum = parseFloat(priceStr);
+    }
+
+    return total + priceNum;
+  }, 0);
+
+  const defaults: Defaults = {
     userName: user?.name || "Chief Dr. Adeyemi",
     pageTitle: "Investor Dashboard",
     initialTab: "my-assets",
@@ -32,8 +172,6 @@ const Portfolio = () => {
       holdings: "Your Real Estate Holdings",
       valuation: "Current Valuation",
     },
-
-    // original nested structures for flexibility
     user: {
       name: user?.name || "Chief Dr. Adeyemi",
     },
@@ -44,15 +182,15 @@ const Portfolio = () => {
     stats: [
       {
         label: "Portfolio Value",
-        value: "₦4.2B",
+        value: "₦" + portfolioValue.toLocaleString(),
         icon: <TrendingUp size={20} />,
       },
       {
         label: "Active Listings",
-        value: "3",
+        value: properties.length,
         icon: <LayoutDashboard size={20} />,
       },
-      { label: "Watchlist", value: "12", icon: <Heart size={20} /> },
+      { label: "Watchlist", value: items.length, icon: <Heart size={20} /> },
     ],
     navigation: [
       {
@@ -64,42 +202,14 @@ const Portfolio = () => {
       { id: "history", label: "Transactions", icon: <History size={18} /> },
       { id: "settings", label: "Preferences", icon: <Settings size={18} /> },
     ],
-    properties: [
-      {
-        id: 1,
-        title: "The Glass Pavilion",
-        location: "Banana Island, Lagos",
-        price: "₦1.8B",
-        status: "Acquired",
-        image:
-          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800",
-      },
-      {
-        id: 2,
-        title: "Skyline Penthouse",
-        location: "Eko Atlantic, Victoria Island",
-        price: "₦2.4B",
-        status: "Acquired",
-        image:
-          "https://images.unsplash.com/photo-1600607687940-4e2a09695d51?q=80&w=800",
-      },
-    ],
-
-    labels: {
-      signOut: "Sign Out",
-    },
-    cta: {
-      inquire: "Inquire New Property",
-      list: "List New Asset",
-    },
-
+    labels: { signOut: "Sign Out" },
+    cta: { inquire: "Inquire New Property", list: "List New Asset" },
     modal: {
       title: "Property Appraisal",
       headerTitle: "Property Appraisal",
       subtext:
-        "Submit your property details for verification. Once approved by our concierge, it will be visible to our exclusive network of investors.",
-      headerSub:
-        "Submit your property details for verification. Once approved by our concierge, it will be visible to our exclusive network of investors.",
+        "Submit your property details for verification. Once approved...",
+      headerSub: "Submit your property details for verification...",
       labels: {
         assetSubmission: "Asset Submission",
         title: "Property Title",
@@ -122,14 +232,14 @@ const Portfolio = () => {
         pricePlaceholder: "2,500,000,000",
       },
       disclaimer:
-        "By submitting, you agree to the EstatePro Verification Process. Our team will physically inspect the property to ensure it meets our standard for legal title and structural integrity before listing.",
+        "By submitting, you agree to the EstatePro Verification Process...",
     },
   };
 
   const renderActiveTab = () => {
     switch (activeTab) {
       case "my-assets":
-        return <MyAssets defaults={defaults} />;
+        return <MyAssets defaults={defaults} properties={properties} />;
       case "watchlist":
         return <Watchlist />;
 
@@ -139,7 +249,7 @@ const Portfolio = () => {
       case "settings":
         return <div>Coming soon...</div>;
       default:
-        return <MyAssets defaults={defaults} />;
+        return <MyAssets defaults={defaults} properties={properties} />;
     }
   };
 

@@ -15,6 +15,7 @@ import Portfolio from "./pages/Portfolio";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from "./context/auth-context";
 import { useWatchlist } from "./context/watchlist-context";
+import CareersPage from "./pages/CareersPage";
 
 function App() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function App() {
         <Route path="contact" element={<ContactPage />} />
         <Route path="search" element={<SearchResults />} />
         <Route path="auth" element={<Auth />} />
+        <Route path="careers" element={<CareersPage />} />
 
         <Route
           path="auth/portal"

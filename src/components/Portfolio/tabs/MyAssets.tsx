@@ -1,7 +1,14 @@
 import StatsGrid from "../assets/StatsGrid";
 import PropertyCard from "../assets/PropertyCard";
+import type { Defaults, Property } from "../../../pages/Portfolio";
 
-const Portfolio = ({ defaults }) => {
+const Portfolio = ({
+  defaults,
+  properties,
+}: {
+  defaults: Defaults;
+  properties: Property[];
+}) => {
   return (
     <div className="min-h-screen bg-[#fcfcfc] flex">
       <main className="flex-1 ">
@@ -11,7 +18,7 @@ const Portfolio = ({ defaults }) => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {defaults.properties.map((property) => (
+          {properties.map((property: Property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
         </div>

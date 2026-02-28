@@ -1,6 +1,8 @@
 import { Award, ShieldCheck, Globe, Users, ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const AboutPage = () => {
+  const navigate = useNavigate();
   const stats = [
     { label: "Assets Under Management", value: "₦450B+" },
     { label: "Exclusive Listings", value: "120+" },
@@ -162,7 +164,10 @@ const AboutPage = () => {
                 <span className="italic">the vision.</span>
               </h2>
             </div>
-            <button className="flex items-center gap-3 text-white border-b border-accent pb-2 hover:text-accent transition-colors">
+            <button
+              onClick={() => navigate("/careers")}
+              className="flex items-center gap-3 text-white border-b border-accent pb-2 hover:text-accent transition-colors"
+            >
               <span className="text-xs uppercase tracking-widest font-bold">
                 Join the Team
               </span>

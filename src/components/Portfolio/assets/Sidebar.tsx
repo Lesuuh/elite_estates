@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { LogOut } from "lucide-react";
 import { useAuth } from "../../../context/auth-context";
+import type { NavigationItem } from "../../../pages/Portfolio";
 
 interface SidebarProps {
-  navigation: any[];
+  navigation: NavigationItem[];
   activeTab: string;
   setActiveTab: (id: string) => void;
 }

@@ -1,44 +1,14 @@
-import { useState } from "react";
-import {
-  Trash2,
-  MessageSquare,
-  MapPin,
-  ArrowUpRight,
-  Clock,
-  Heart,
-} from "lucide-react";
+import { Trash2, MapPin, ArrowUpRight, Clock, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useWatchlist } from "../../../context/watchlist-context";
+import { timeAgoOrDate } from "../../../utils/time";
 
 const Watchlist = () => {
-  // Mock data for the watchlist
   const { items, removeFromWatchlist } = useWatchlist();
 
-  // const [items, setItems] = useState([
-  //   {
-  //     id: 101,
-  //     title: "The Obsidian Manor",
-  //     location: "Ikoyi, Lagos",
-  //     price: "₦3.2B",
-  //     image:
-  //       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
-  //     status: "Available",
-  //     addedDate: "2 days ago",
-  //   },
-  //   {
-  //     id: 102,
-  //     title: "Azure Waterfront Villa",
-  //     location: "Lekki Phase 1, Lagos",
-  //     price: "₦850M",
-  //     image:
-  //       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800",
-  //     status: "Price Dropped",
-  //     addedDate: "1 week ago",
-  //   },
-  // ]);
-
-  const removeItem = (id: number) => {
-    setItems(items.filter((item) => item.id !== id));
+  const formatPrice = (price: string | number) => {
+    if (typeof price === "number") return `₦${price.toLocaleString("en-NG")}`;
+    return price;
   };
 
   return (
@@ -53,82 +23,92 @@ const Watchlist = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 text-[10px] font-bold text-accent uppercase tracking-tighter bg-accent/5 px-4 py-2 rounded-full border border-accent/10">
+        <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-accent uppercase tracking-widest bg-accent/5 px-4 py-2 rounded-full border border-accent/10">
           <Clock size={14} /> Auto-updates every 15m
         </div>
       </div>
 
       {items.length > 0 ? (
-        <div className="space-y-6">
+        <div className="space-y-4">
           {items.map((item) => (
             <div
               key={item.id}
-              className="group bg-white border border-gray-100 rounded-3xl overflow-hidden flex flex-col md:flex-row items-center hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+              className="group bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col md:flex-row items-stretch hover:shadow-xl hover:shadow-primary/5 transition-all duration-500"
             >
-              {/* Image Container */}
-              <div className="w-full md:w-72 h-48 md:h-auto relative overflow-hidden">
+              {/* Image Container - FIXED HEIGHT & WIDTH */}
+              <div className="w-full md:w-64 h-48 md:h-40 relative flex-shrink-0 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                {item.status === "Price Dropped" && (
-                  <div className="absolute top-4 left-4 bg-red-500 text-white text-[9px] font-bold uppercase px-3 py-1 rounded-full">
-                    Price Update
+
+                {/* Status Badge on Image */}
+                <div className="absolute top-3 left-3 flex flex-col gap-2">
+                  <div
+                    className={`text-[8px] font-bold uppercase px-2 py-1 rounded-md shadow-sm ${
+                      item.status === "Available"
+                        ? "bg-green-500 text-white"
+                        : item.status === "Sold"
+                          ? "bg-gray-500 text-white"
+                          : "bg-amber-500 text-white"
+                    }`}
+                  >
+                    {item.status}
                   </div>
-                )}
+                </div>
               </div>
 
               {/* Details Content */}
-              <div className="flex-1 p-8 flex flex-col md:flex-row justify-between items-center gap-6 w-full">
-                <div className="space-y-2 text-center md:text-left">
-                  <h3 className="text-xl font-serif text-primary">
+              <div className="flex-1 p-6 flex flex-col md:flex-row justify-between items-center gap-6 w-full">
+                <div className="space-y-1 text-center md:text-left">
+                  <h3 className="text-lg font-serif text-primary">
                     {item.title}
                   </h3>
-                  <p className="flex items-center justify-center md:justify-start gap-1 text-gray-400 text-xs">
-                    <MapPin size={12} className="text-accent" /> {item.location}
-                  </p>
-                  <p className="text-[10px] text-gray-300 uppercase tracking-widest">
-                    Added {item.addedDate}
-                  </p>
-                </div>
-
-                <div className="text-center md:text-right">
-                  <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mb-1">
-                    Current Value
-                  </p>
-                  <p className="text-2xl font-bold text-primary">
-                    {item.price}
+                  <div className="flex flex-col md:flex-row md:items-center gap-2">
+                    <p className="flex items-center justify-center md:justify-start gap-1 text-gray-400 text-xs">
+                      <MapPin size={12} className="text-accent" />{" "}
+                      {item.location}
+                    </p>
+                  </div>
+                  <p className="text-[9px] text-gray-300 uppercase tracking-widest pt-1">
+                    Added {timeAgoOrDate(item.createdAt)}
                   </p>
                 </div>
 
-                {/* Actions */}
-                <div className="flex items-center gap-3">
+                <div className="text-center md:text-right md:min-w-[150px]">
+                  <p className="text-[9px] uppercase font-bold text-gray-400 tracking-widest mb-1">
+                    Market Value
+                  </p>
+                  <p className="text-xl font-bold text-primary">
+                    {formatPrice(item.price)}
+                  </p>
+                </div>
+
+                {/* Actions - Cleaned up (Inquire Removed) */}
+                <div className="flex items-center gap-2">
                   <button
-                    onClick={() => removeItem(item.id)}
-                    className="p-4 text-gray-300 hover:text-red-500 hover:bg-red-50 rounded-2xl transition-all"
-                    title="Remove from Watchlist"
+                    onClick={() => removeFromWatchlist(item.id.toString())}
+                    className="p-3 text-gray-300 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all"
+                    title="Remove"
                   >
-                    <Trash2 size={20} />
+                    <Trash2 size={18} />
                   </button>
 
                   <Link
                     to={`/properties/${item.id}`}
-                    className="p-4 text-gray-300 hover:text-primary hover:bg-gray-50 rounded-2xl transition-all"
+                    className="p-3 text-white bg-primary hover:bg-accent hover:text-primary rounded-xl transition-all shadow-md"
+                    title="View Asset"
                   >
-                    <ArrowUpRight size={20} />
+                    <ArrowUpRight size={18} />
                   </Link>
-
-                  <button className="bg-primary text-white px-6 py-4 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-all flex items-center gap-2">
-                    <MessageSquare size={16} /> Inquire
-                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="py-40 text-center border-2 border-dashed border-gray-100 rounded-[40px]">
+        <div className="py-32 text-center border-2 border-dashed border-gray-100 rounded-[40px]">
           <Heart className="mx-auto text-gray-100 mb-4" size={48} />
           <p className="text-gray-400 font-serif italic text-xl">
             Your collection is currently empty.

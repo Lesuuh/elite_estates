@@ -73,6 +73,7 @@ export const WatchlistProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useWatchlist = () => {
   const context = useContext(WatchlistContext);
   if (!context) {
