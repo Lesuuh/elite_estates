@@ -1,4 +1,4 @@
-import React from "react";
+
 import { ArrowUpRight, Plus, MapPin } from "lucide-react";
 
 const CareersPage = () => {

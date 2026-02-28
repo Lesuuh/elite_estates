@@ -6,11 +6,18 @@ import {
   ChevronRight,
   CheckCircle2,
 } from "lucide-react";
+import type { Property } from "../types";
 
-const AcquireModal = ({ property, onClose }) => {
+const AcquireModal = ({
+  property,
+  onClose,
+}: {
+  property: Property;
+  onClose: () => void;
+}) => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     // In a real app, you'd send an email/notification to your sales team here
