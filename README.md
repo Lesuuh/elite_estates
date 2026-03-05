@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# Elite Estates 🏘️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-end real estate discovery platform built with **React** and **Tailwind CSS**. Elite Estates focuses on a "vibe-first" user experience, utilizing a minimalist architectural design and high-quality imagery to showcase luxury properties.
 
-Currently, two official plugins are available:
+![Project Preview](/public/images/elite-estates.png) ## 🔗 Links
+- **Live Demo:** [https://elite-estates-liart.vercel.app/](https://elite-estates-liart.vercel.app/)
+- **Repository:** [https://github.com/Lesuuh/elite_estates](https://github.com/Lesuuh/elite_estates)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Overview
+Elite Estates is a frontend-driven marketplace designed to solve the "clutter problem" found in traditional real estate sites. It provides a seamless, app-like experience for users to browse property listings, filter by specific criteria, and curate a personal collection via the **Watchlist** feature.
 
-## React Compiler
+## ✨ Key Features
+- **Global Watchlist:** Save and track properties of interest across the entire application using a centralized state.
+- **Dynamic Filtering:** Instantly sort through properties by category and price range for a tailored browsing experience.
+- **Premium UI/UX:** A mobile-first, high-contrast design system built with Tailwind CSS.
+- **Immersive Imagery:** Integrated high-resolution architectural photography to maintain a luxury brand aesthetic.
+- **Responsive Layout:** Optimized for everything from ultra-wide monitors to mobile handhelds.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **Library:** [React.js](https://reactjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **State Management:** React Context API
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Assets:** Unsplash API (Imagery)
 
-## Expanding the ESLint configuration
+## 🏗️ Technical Highlights
+- **Context-Driven State:** Leverages the React Context API to manage the Watchlist and filter states globally, avoiding "prop drilling" and ensuring real-time UI updates.
+- **Component Architecture:** Built with highly reusable functional components for maintainability and scalability.
+- **Declarative UI:** Focuses on clean, readable code to handle dynamic data rendering for property listings.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚦 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Lesuuh/elite_estates.git](https://github.com/Lesuuh/elite_estates.git)
