@@ -53,7 +53,7 @@ const Hero = () => {
 
   return (
     <div
-      className="min-h-screen w-full pt-30 pb-10 md:pt-0 bg-cover bg-center relative flex items-center justify-center"
+      className="min-h-screen w-full pt-30 pb-10 bg-cover bg-center relative flex items-center justify-center"
       // New reliable high-res luxury architecture image
       style={{
         backgroundImage:
@@ -74,7 +74,7 @@ const Hero = () => {
             <span className="text-accent italic font-serif">Signature</span>{" "}
             Residence
           </h2>
-          <p className="text-gray-100 mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-gray-100 mt-http://localhost/4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
             Curated collections of the most prestigious architectural
             masterpieces across Nigeria's prime locations.
           </p>
